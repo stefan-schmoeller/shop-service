@@ -34,8 +34,12 @@ dependencies {
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.quarkus:quarkus-jacoco")
     testImplementation("org.assertj:assertj-core:3.27.7")
-    testImplementation("org.wiremock:wiremock-standalone:3.13.2")
     testImplementation("io.rest-assured:rest-assured")
+    
+    testImplementation("org.wiremock:wiremock-standalone:3.13.2")
+    testImplementation("org.apache.solr:solr-test-framework:9.10.1")
+    
+    testImplementation("com.google.guava:guava")
 }
 
 group = "de.qaware.ssh.conference.service"
