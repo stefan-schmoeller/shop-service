@@ -37,7 +37,7 @@ dependencies {
     testImplementation("io.rest-assured:rest-assured")
     
     testImplementation("org.wiremock:wiremock-standalone:3.13.2")
-    testImplementation("org.apache.solr:solr-test-framework:9.10.1")
+    testImplementation("org.testcontainers:testcontainers")
     
     testImplementation("com.google.guava:guava")
 }
