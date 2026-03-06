@@ -1,0 +1,27 @@
+[
+  {
+    "product_id": 1,
+    "description_de": "Gaming Laptop Pro High-End 32GB RAM RTX 4080 Grafikkarte Notebook Power",
+    "description_en": "High-Performance Graphics Card High-End Gaming Notebook Power"
+  },
+  {
+    "product_id": 2,
+    "description_de": "Kabellose Maus Ergonomisch Funkmaus optisch Sensor Wireless Peripherie",
+    "description_en": "Wireless Mouse Ergonomic Optical Sensor Peripherals"
+  },
+  {
+    "product_id": 3,
+    "description_de": "Mechanische Tastatur RGB Beleuchtung Blue Switches USB-C Keyboard Tippen",
+    "description_en": "Mechanical Keyboard Blue Switches USB-C Typing"
+  },
+  {
+    "product_id": 4,
+    "description_de": "Ultrawide Monitor 34 Zoll Curved 144Hz IPS Grafikdesign Bildschirm Display",
+    "description_en": "Ultrawide Monitor 34 Inch Curved Display Screen Graphics Design"
+  },
+  {
+    "product_id": 5,
+    "description_de": "Noise Cancelling Headset Bluetooth Kopfhörer ANC Audio Musik",
+    "description_en": "Noise Cancelling Headphones Active Noise Cancellation Music Audio"
+  }
+]
