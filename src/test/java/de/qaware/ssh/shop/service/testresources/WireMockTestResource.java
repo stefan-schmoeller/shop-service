@@ -60,7 +60,7 @@ public class WireMockTestResource implements QuarkusTestResourceLifecycleManager
                         get(urlPathTemplate("/inventory/{id}"))
                                 .withPathParam("id", equalTo("" + Integer.MAX_VALUE))
                                 .atPriority(1)
-                                .willReturn(ok().withFixedDelay(600))
+                                .willReturn(ok().withFixedDelay(2100))
                 )
         );
         wireMockServer.addStubMapping(
@@ -90,7 +90,7 @@ public class WireMockTestResource implements QuarkusTestResourceLifecycleManager
                         get(urlPathEqualTo("/inventory"))
                                 .withQueryParam("id", including("" + Integer.MAX_VALUE))
                                 .atPriority(1)
-                                .willReturn(ok().withFixedDelay(600))
+                                .willReturn(ok().withFixedDelay(2100))
                 )
         );
         wireMockServer.addStubMapping(

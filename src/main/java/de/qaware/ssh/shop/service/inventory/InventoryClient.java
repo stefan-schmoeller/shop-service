@@ -17,13 +17,13 @@ import java.util.List;
 public interface InventoryClient {
     
     @GET
-    @Timeout(500)
+    @Timeout(2000)
     @Fallback(fallbackMethod = "stockFallback", applyOn = {TimeoutException.class, ClientWebApplicationException.class})
     List<InventoryEntry> getStock(@QueryParam("id") List<Integer> productIds);
     
     @GET
     @Path("/{id}")
-    @Timeout(500)
+    @Timeout(2000)
     @Fallback(fallbackMethod = "stockFallback", applyOn = {TimeoutException.class, ClientWebApplicationException.class})
     InventoryEntry getStock(@PathParam("id") Integer productId);
     
