@@ -1,0 +1,252 @@
+[
+  {
+    "product_id": 1,
+    "description_de": "Gaming Laptop Pro High-End 32GB RAM RTX 4080 Grafikkarte Notebook Power",
+    "description_en": "High-Performance Graphics Card High-End Gaming Notebook Power"
+  },
+  {
+    "product_id": 2,
+    "description_de": "Kabellose Maus Ergonomisch Funkmaus optisch Sensor Wireless Peripherie",
+    "description_en": "Wireless Mouse Ergonomic Optical Sensor Peripherals"
+  },
+  {
+    "product_id": 3,
+    "description_de": "Mechanische Tastatur RGB Beleuchtung Blue Switches USB-C Keyboard Tippen",
+    "description_en": "Mechanical Keyboard Blue Switches USB-C Typing"
+  },
+  {
+    "product_id": 4,
+    "description_de": "Ultrawide Monitor 34 Zoll Curved 144Hz IPS Grafikdesign Bildschirm Display",
+    "description_en": "Ultrawide Monitor 34 Inch Curved Display Screen Graphics Design"
+  },
+  {
+    "product_id": 5,
+    "description_de": "Noise Cancelling Headset Bluetooth Kopfhörer ANC Audio Musik",
+    "description_en": "Noise Cancelling Headphones Active Noise Cancellation Music Audio"
+  },
+  {
+    "product_id": 6,
+    "description_de": "USB-C Docking Station 10-in-1 Hub HDMI Ethernet Adapter Laptop",
+    "description_en": "USB-C Docking Station 10-in-1 Hub Connectivity Port Replicator"
+  },
+  {
+    "product_id": 7,
+    "description_de": "Ergonomischer Bürostuhl Netzrücken Office Chair Komfort Sitzen",
+    "description_en": "Ergonomic Office Chair Mesh Back Adjustment Comfort Sitting"
+  },
+  {
+    "product_id": 8,
+    "description_de": "LED Schreibtischlampe Dimmbar USB-Ladeanschluss Licht Büro",
+    "description_en": "LED Desk Lamp Dimmable Charging Port Light Office"
+  },
+  {
+    "product_id": 9,
+    "description_de": "Externe SSD 2TB NVMe USB 3.2 Speicher stoßfest Backup",
+    "description_en": "External SSD 2TB Storage Shockproof Drive Backup"
+  },
+  {
+    "product_id": 10,
+    "description_de": "Webcam 4K Ultra HD Streaming Kamera Autofokus Mikrofon Video",
+    "description_en": "Webcam 4K Ultra HD Web Cam Auto Focus Microphone Video"
+  },
+  {
+    "product_id": 11,
+    "description_de": "Gaming Stuhl Throne Lederoptik Lordosenstütze 4D Armlehnen Sitz",
+    "description_en": "Gaming Chair Leather Appearance Lumbar Support 4D Armrests"
+  },
+  {
+    "product_id": 12,
+    "description_de": "Bluetooth Lautsprecher Wasserdicht IPX7 Akku Audio Sound",
+    "description_en": "Bluetooth Speaker Waterproof IPX7 Battery Audio Sound"
+  },
+  {
+    "product_id": 13,
+    "description_de": "Grafiktablett M-Size Stift Zeichnen Design Digital Zeichner",
+    "description_en": "Drawing Tablet M-Size Pen Art Stylus Digital Design"
+  },
+  {
+    "product_id": 14,
+    "description_de": "Stehschreibtisch Gestell Elektrisch höhenverstellbar Memory Office",
+    "description_en": "Standing Desk Frame Electric Height Adjustable Memory Office"
+  },
+  {
+    "product_id": 15,
+    "description_de": "VR Headset Gen 2 Standalone Speicher Controller Virtual Reality Gaming",
+    "description_en": "VR Headset Standalone Storage Controller Virtual Reality Glasses"
+  },
+  {
+    "product_id": 16,
+    "description_de": "Streaming Mikrofon Kondensator Niere Podcast Audio Recording",
+    "description_en": "Streaming Mic Condenser Cardioid Podcast Audio Recording"
+  },
+  {
+    "product_id": 17,
+    "description_de": "Laptop Ständer Aluminium Faltbar Ergonomie Arbeit",
+    "description_en": "Laptop Stand Aluminum Foldable Ergonomics Work"
+  },
+  {
+    "product_id": 18,
+    "description_de": "XXL Mousepad 900x400mm rutschfest Gaming Zubehör Pad",
+    "description_en": "XXL Mouse Mat Non-slip Gaming Accessories Pad"
+  },
+  {
+    "product_id": 19,
+    "description_de": "Wi-Fi 6 Router Dual-Band Gigabit Internet Netzwerk WLAN",
+    "description_en": "Wi-Fi 6 Router Dual-Band Gigabit Internet Network Wireless"
+  },
+  {
+    "product_id": 20,
+    "description_de": "Smart Home Hub Steuerung Smart-Geräte Zigbee Home Automation",
+    "description_en": "Smart Home Hub Central Control Automation Zigbee"
+  },
+  {
+    "product_id": 21,
+    "description_de": "Mobiler Monitor 15 Zoll Tragbar USB-C Display Bildschirm",
+    "description_en": "Portable Monitor 15 Inch USB-C Display Screen"
+  },
+  {
+    "product_id": 22,
+    "description_de": "Laptop Tasche 14 Zoll Schutz wasserabweisend Hülle Case",
+    "description_en": "Laptop Bag 14 Inch Water-resistant Sleeve Case"
+  },
+  {
+    "product_id": 23,
+    "description_de": "Powerbank 20.000 mAh Schnellladen USB Akku Mobil",
+    "description_en": "Power Bank 20,000 mAh Fast Charge Battery Mobile"
+  },
+  {
+    "product_id": 24,
+    "description_de": "Ethernet Kabel 10m Cat 7 LAN Internet Netzwerk RJ45",
+    "description_en": "Ethernet Cable 10m Cat 7 LAN Patch Cable Network"
+  },
+  {
+    "product_id": 25,
+    "description_de": "4K Monitor 27 Zoll UHD HDR Bildschirm Display Office",
+    "description_en": "4K Monitor 27 Inch UHD High Dynamic Range Screen Display"
+  },
+  {
+    "product_id": 26,
+    "description_de": "Smartphone Pro Max OLED Handy Triple-Kamera 256GB Mobile",
+    "description_en": "Smartphone Pro Max OLED Triple Camera 256GB Mobile"
+  },
+  {
+    "product_id": 27,
+    "description_de": "USB-C Ladekabel 2m Schnellladen Textil Kabel Power",
+    "description_en": "USB-C Charging Cable 2m Fast Charge Textile Power"
+  },
+  {
+    "product_id": 28,
+    "description_de": "Tablet Air 10 Zoll Entertainment Office WiFi 6 iPad-Alternative",
+    "description_en": "Tablet Air 10 Inch Entertainment Office WiFi 6"
+  },
+  {
+    "product_id": 29,
+    "description_de": "Laser-Drucker Schwarzweiß WLAN Duplexdruck Office Print",
+    "description_en": "Laser Printer Monochrome Wireless Duplex Office Print"
+  },
+  {
+    "product_id": 30,
+    "description_de": "WLAN Verstärker Repeater Reichweite Heimnetzwerk Mesh",
+    "description_en": "Wifi Extender Repeater Range Booster Home Network Mesh"
+  },
+  {
+    "product_id": 31,
+    "description_de": "Smarte Glühbirne RGB App Alexa Google Home Beleuchtung",
+    "description_en": "Smart Bulb RGB App Alexa Google Home Lighting"
+  },
+  {
+    "product_id": 32,
+    "description_de": "Drahtlose Ladestation Induktiv 15W Qi Wireless Charging",
+    "description_en": "Wireless Charging Station Inductive 15W Qi Charging"
+  },
+  {
+    "product_id": 33,
+    "description_de": "Action Kamera 4K Wasserdicht Stabilisierung Video Sport",
+    "description_en": "Action Cam 4K Waterproof Stabilization Video Sport"
+  },
+  {
+    "product_id": 34,
+    "description_de": "Externe HDD 4TB Festplatte Backup Speicher USB 3.0",
+    "description_en": "External Hard Drive 4TB HDD Backup Storage USB 3.0"
+  },
+  {
+    "product_id": 35,
+    "description_de": "Gaming Controller Wireless PC Konsole Gamepad",
+    "description_en": "Gaming Controller Wireless PC Console Gamepad Joystick"
+  },
+  {
+    "product_id": 36,
+    "description_de": "VR Tracking Sensoren Full-Body Motion Tracking",
+    "description_en": "VR Tracking Sensors Full-Body Motion Tracking Virtual Reality"
+  },
+  {
+    "product_id": 37,
+    "description_de": "MicroSD Karte 256GB A2 V30 Flash-Speicher 4K Video",
+    "description_en": "MicroSD Card 256GB Flash Storage 4K Video SD-Card"
+  },
+  {
+    "product_id": 38,
+    "description_de": "HDMI Switch 3-auf-1 Umschalter 4K 60Hz TV Hub",
+    "description_en": "HDMI Switcher 3-to-1 Selector 4K 60Hz TV Hub"
+  },
+  {
+    "product_id": 39,
+    "description_de": "Sicherheitskamera Outdoor Wetterfest Nachtsicht Security",
+    "description_en": "Security Camera Outdoor Weatherproof Night Vision Security"
+  },
+  {
+    "product_id": 40,
+    "description_de": "Smartes Türschloss Keyless Entry Smartphone Schloss",
+    "description_en": "Smart Lock Keyless Entry Smartphone Lock"
+  },
+  {
+    "product_id": 41,
+    "description_de": "Adapter USB-C auf HDMI Monitor TV Beamer 4K",
+    "description_en": "USB-C to HDMI Adapter Monitor TV Projector 4K"
+  },
+  {
+    "product_id": 42,
+    "description_de": "Laptop Sleeve 13 Zoll Schutzhülle Case Tasche",
+    "description_en": "Laptop Sleeve 13 Inch Protective Cover Case"
+  },
+  {
+    "product_id": 43,
+    "description_de": "Laptop Kühler Lüfter Cooling Pad USB",
+    "description_en": "Laptop Cooler Fan Cooling Pad USB Fan"
+  },
+  {
+    "product_id": 44,
+    "description_de": "Bildschirm Reinigungskit Spray Tuch Display Monitor",
+    "description_en": "Screen Cleaning Kit Spray Cloth Display Monitor"
+  },
+  {
+    "product_id": 45,
+    "description_de": "Kabel-Organizer Box Schreibtisch Kabelmanagement",
+    "description_en": "Cable Management Box Desk Organizer Cable Organizer"
+  },
+  {
+    "product_id": 46,
+    "description_de": "Smarte Steckdose Smart Plug Strommessung Home",
+    "description_en": "Smart Outlet Smart Plug Power Meter Home"
+  },
+  {
+    "product_id": 47,
+    "description_de": "Luftreiniger Smart HEPA-Filter Allergie App",
+    "description_en": "Air Purifier Smart HEPA-Filter Allergy App"
+  },
+  {
+    "product_id": 48,
+    "description_de": "Bluetooth USB Dongle PC Upgrade Wireless Adapter",
+    "description_en": "Bluetooth USB Dongle PC Upgrade BT Adapter"
+  },
+  {
+    "product_id": 49,
+    "description_de": "Thunderbolt 4 Kabel 40Gbps Display Daten Power",
+    "description_en": "Thunderbolt 4 Cable 40Gbps Display Data Power"
+  },
+  {
+    "product_id": 50,
+    "description_de": "Stehschreibtisch Matte Anti-Ermüdung Stehen Komfort",
+    "description_en": "Standing Desk Mat Anti-fatigue Standing Comfort"
+  }
+]
