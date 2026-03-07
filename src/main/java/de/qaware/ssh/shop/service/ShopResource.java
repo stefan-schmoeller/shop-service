@@ -81,6 +81,7 @@ public class ShopResource {
     
     @GET
     @Path("/receipt/{orderId}")
+    @Produces(MediaType.APPLICATION_OCTET_STREAM)
     public Response download(@PathParam("orderId") UUID orderId) {
         // Identify related order
         Order order = orderProvider.getOrder(orderId);
