@@ -135,7 +135,7 @@ public class SolrTestResource implements QuarkusTestResourceConfigurableLifecycl
             return Map.of(
                     "solr.base.url", "http://localhost:" + solrContainer.getMappedPort(8983) + "/solr"
             );
-        } 
+        }
     }
     
     @Override
