@@ -52,7 +52,7 @@ public class SolrTestResource implements QuarkusTestResourceConfigurableLifecycl
     @SuppressWarnings("java:S2142") // Losing information about thread interruption is not critical in test code
     public Map<String, String> start() {
         if (solrCollections == null || solrCollections.length == 0) {
-            throw new IllegalStateException("No Solr schema has been specified. Please add an @Collection property at the WithSolrTestResource annotation");
+            throw new IllegalStateException("No Solr schema has been specified. Please add an collections property at the WithSolrTestResource annotation");
         }
 
         solrContainer = createContainer("solr:" + solrCloudVersion);
