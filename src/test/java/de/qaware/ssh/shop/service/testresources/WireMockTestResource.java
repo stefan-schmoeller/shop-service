@@ -16,7 +16,6 @@ import static com.github.tomakehurst.wiremock.client.WireMock.get;
 import static com.github.tomakehurst.wiremock.client.WireMock.havingExactly;
 import static com.github.tomakehurst.wiremock.client.WireMock.including;
 import static com.github.tomakehurst.wiremock.client.WireMock.ok;
-import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlPathTemplate;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
@@ -47,66 +46,54 @@ public class WireMockTestResource implements QuarkusTestResourceLifecycleManager
 
     private void createMappings() {
         Map<Integer, Integer> stock = Map.of(
-                1, 10,
-                2, 5,
-                3, 7,
-                4, 0,
-                5, 23
+            1, 10,
+            2, 5,
+            3, 7,
+            4, 0,
+            5, 23
         );
         for (Map.Entry<Integer, Integer> stockEntry : stock.entrySet()) {
-            wireMockServer.addStubMapping(
-                    stubFor(
-                            get(urlPathTemplate("/inventory/{id}"))
-                                    .withPathParam("id", equalTo(stockEntry.getKey().toString()))
-                                    .atPriority(1)
-                                    .willReturn(okForJson(new InventoryEntry(stockEntry.getKey(), stockEntry.getValue())))
-                    )
+            wireMockServer.stubFor(
+                get(urlPathTemplate("/inventory/{id}"))
+                    .withPathParam("id", equalTo(stockEntry.getKey().toString()))
+                    .atPriority(1)
+                    .willReturn(okForJson(new InventoryEntry(stockEntry.getKey(), stockEntry.getValue())))
             );
         }
-        wireMockServer.addStubMapping(
-                stubFor(
-                        get(urlPathTemplate("/inventory/{id}"))
-                                .withPathParam("id", equalTo("" + Integer.MAX_VALUE))
-                                .atPriority(1)
-                                .willReturn(ok().withFixedDelay(2100))
-                )
+        wireMockServer.stubFor(
+            get(urlPathTemplate("/inventory/{id}"))
+                .withPathParam("id", equalTo("" + Integer.MAX_VALUE))
+                .atPriority(1)
+                .willReturn(ok().withFixedDelay(2100))
         );
-        wireMockServer.addStubMapping(
-                stubFor(
-                        get(urlPathTemplate("/inventory/{id}"))
-                                .atPriority(2)
-                                .willReturn(badRequest())
-                )
+        wireMockServer.stubFor(
+            get(urlPathTemplate("/inventory/{id}"))
+                .atPriority(2)
+                .willReturn(badRequest())
         );
 
         for (Set<Integer> ids : Sets.powerSet(stock.keySet())) {
-            wireMockServer.addStubMapping(
-                    stubFor(
-                            get(urlPathEqualTo("/inventory"))
-                                    .withQueryParam("id", havingExactly(ids.stream().map(Object::toString).toArray(String[]::new)))
-                                    .atPriority(1)
-                                    .willReturn(
-                                            okForJson(
-                                                    ids.stream().map(id -> new InventoryEntry(id, stock.get(id))).toList()
-                                            )
-                                    )
+            wireMockServer.stubFor(
+                get(urlPathEqualTo("/inventory"))
+                    .withQueryParam("id", havingExactly(ids.stream().map(Object::toString).toArray(String[]::new)))
+                    .atPriority(1)
+                    .willReturn(
+                        okForJson(
+                            ids.stream().map(id -> new InventoryEntry(id, stock.get(id))).toList()
+                        )
                     )
             );
         }
-        wireMockServer.addStubMapping(
-                stubFor(
-                        get(urlPathEqualTo("/inventory"))
-                                .withQueryParam("id", including("" + Integer.MAX_VALUE))
-                                .atPriority(1)
-                                .willReturn(ok().withFixedDelay(2100))
-                )
+        wireMockServer.stubFor(
+            get(urlPathEqualTo("/inventory"))
+                .withQueryParam("id", including("" + Integer.MAX_VALUE))
+                .atPriority(1)
+                .willReturn(ok().withFixedDelay(2100))
         );
-        wireMockServer.addStubMapping(
-                stubFor(
-                        get(urlPathEqualTo("/inventory"))
-                                .atPriority(2)
-                                .willReturn(badRequest())
-                )
+        wireMockServer.stubFor(
+            get(urlPathEqualTo("/inventory"))
+                .atPriority(2)
+                .willReturn(badRequest())
         );
     }
 
