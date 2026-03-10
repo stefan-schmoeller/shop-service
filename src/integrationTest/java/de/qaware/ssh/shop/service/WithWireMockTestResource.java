@@ -35,7 +35,7 @@ public @interface WithWireMockTestResource {
      * @return true if logging shall be enabled
      */
     boolean logConsumeEnabled() default false;
-    
+
     /**
      * Set to true if WireMock logging should be verbose
      *

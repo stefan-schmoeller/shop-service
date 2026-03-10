@@ -15,23 +15,23 @@ import java.util.Optional;
 import java.util.function.Consumer;
 
 public class WireMockTestResource implements QuarkusTestResourceConfigurableLifecycleManager<WithWireMockTestResource>, DevServicesContext.ContextAware {
-    
+
     private GenericContainer<?> wireMockContainer;
-    
+
     private Optional<String> containerNetworkId;
-    
+
     // Version of the WireMock Image to use.
     private String wireMockVersion;
     private String[] clients;
-    
+
     private boolean logConsumeEnabled;
     private boolean verboseLoggingEnabled;
-    
+
     @Override
     public void setIntegrationTestContext(DevServicesContext context) {
         containerNetworkId = context.containerNetworkId();
     }
-    
+
     @Override
     public void init(WithWireMockTestResource annotation) {
         wireMockVersion = annotation.version();
@@ -47,9 +47,9 @@ public class WireMockTestResource implements QuarkusTestResourceConfigurableLife
             wireMockContainer.withEnv("WIREMOCK_OPTIONS", "--verbose");
         }
         containerNetworkId.ifPresent(wireMockContainer::withNetworkMode);
-        
+
         wireMockContainer.start();
-        
+
         Map<String, String> configuration = new HashMap<>();
         String networkHostname = Objects.requireNonNull(wireMockContainer.getCurrentContainerInfo().getConfig().getHostName());
         for (String client : clients) {
@@ -57,7 +57,7 @@ public class WireMockTestResource implements QuarkusTestResourceConfigurableLife
         }
         return configuration;
     }
-    
+
     // This is only for testing purposes, so there should be no harm if some resources are not closed
     @SuppressWarnings("java:S2095")
     private GenericContainer<?> createContainer(String wireMockImage) {
@@ -67,7 +67,7 @@ public class WireMockTestResource implements QuarkusTestResourceConfigurableLife
                 .waitingFor(Wait.forHttp("/__admin/health").forPort(8080))
                 .withCopyFileToContainer(MountableFile.forClasspathResource("wiremock", 0777), "/home/wiremock");
     }
-    
+
     @SuppressWarnings("java:S106") // We want the output in stdout for testing purposes
     private static Consumer<OutputFrame> consumer(boolean enabled) {
         return outputFrame -> {
@@ -76,7 +76,7 @@ public class WireMockTestResource implements QuarkusTestResourceConfigurableLife
             }
         };
     }
-    
+
     @Override
     public void stop() {
         if (wireMockContainer != null) {

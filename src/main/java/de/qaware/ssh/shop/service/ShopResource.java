@@ -10,7 +10,11 @@ import de.qaware.ssh.shop.service.search.SearchProvider;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
-import jakarta.ws.rs.*;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -22,7 +26,7 @@ import java.util.UUID;
 @Path("shop")
 @Produces(MediaType.APPLICATION_JSON)
 public class ShopResource {
-    
+
     @Inject
     public ShopResource(SearchProvider searchProvider, ProductProvider productProvider, OrderProvider orderProvider, InventoryProvider inventoryProvider, ReceiptProvider receiptProvider) {
         this.searchProvider = searchProvider;
@@ -31,7 +35,7 @@ public class ShopResource {
         this.inventoryProvider = inventoryProvider;
         this.receiptProvider = receiptProvider;
     }
-    
+
     @Inject
     SearchProvider searchProvider;
     @Inject
@@ -42,20 +46,23 @@ public class ShopResource {
     InventoryProvider inventoryProvider;
     @Inject
     ReceiptProvider receiptProvider;
-    
+
     @GET
     @Path("/search")
     public Response search(@QueryParam("searchTerm") String searchTerm) {
         // Search IDs of products matching the search term
         List<Integer> ids = searchProvider.query(searchTerm);
+
         // Check availability
         Map<Integer, Integer> stocks = inventoryProvider.getStocks(ids);
         stocks.entrySet().removeIf(entry -> entry.getValue() <= 0);
+
         // Resolve available products
         List<Product> products = productProvider.getProducts(stocks.keySet());
+
         return Response.ok(products).build();
     }
-    
+
     @GET
     @Path("/order/{productId}")
     @Transactional
@@ -64,36 +71,41 @@ public class ShopResource {
         if (inventoryProvider.getStock(productId) <= 0) {
             return Response.status(Response.Status.CONFLICT).entity("Currently sold out").build();
         }
-        
+
         UUID orderId = UUID.randomUUID();
-        
+
         // Generate S3 key
         String s3Key = "receipts/order-" + orderId + ".txt";
-        
+
         // Persist order
         Order order = new Order(orderId, productId, s3Key);
         orderProvider.persist(order);
+
         // Persist receipt in S3
         receiptProvider.persist(s3Key, orderId);
+
         // Return order details
         return Response.status(Response.Status.CREATED).entity(order).build();
     }
-    
+
     @GET
     @Path("/receipt/{orderId}")
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     public Response download(@PathParam("orderId") UUID orderId) {
         // Identify related order
         Order order = orderProvider.getOrder(orderId);
+
         if (order == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
+
         // Get receipt from S3 bucket
         byte[] data = receiptProvider.getReceipt(order.receiptKey());
+
         // Create binary response
         return Response.ok(data)
                 .header("Content-Disposition", "attachment; filename=\"receipt.txt\"")
                 .build();
     }
-    
+
 }

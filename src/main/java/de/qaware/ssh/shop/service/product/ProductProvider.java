@@ -16,22 +16,24 @@ import java.util.Set;
 
 @ApplicationScoped
 public class ProductProvider {
-    
+
     private static final String PRODUCTS_QUERY = "SELECT * FROM products WHERE id =ANY (?)";
-    
+
     @Inject
     DataSource dataSource;
-    
+
     public List<Product> getProducts(Set<Integer> ids) {
         if (ids.isEmpty()) {
             return Collections.emptyList();
         }
+
         try (
                 Connection connection = dataSource.getConnection();
                 PreparedStatement statement = connection.prepareStatement(PRODUCTS_QUERY)
         ) {
             statement.setArray(1, connection.createArrayOf("integer", ids.toArray()));
             ResultSet result = statement.executeQuery();
+
             List<Product> products = new ArrayList<>();
             while (result.next()) {
                 Product product = new Product(
@@ -42,10 +44,11 @@ public class ProductProvider {
                 );
                 products.add(product);
             }
+
             return products;
         } catch (SQLException e) {
             throw new InternalServerErrorException("Error in communication with products database", e);
         }
     }
-    
+
 }

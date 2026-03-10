@@ -10,19 +10,19 @@ import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class InventoryProvider {
-    
+
     @Inject
     @RestClient
     InventoryClient inventoryClient;
-    
+
     public Map<Integer, Integer> getStocks(List<Integer> productIds) {
         return inventoryClient.getStock(productIds)
                 .stream()
                 .collect(Collectors.toMap(InventoryEntry::id, InventoryEntry::stock));
     }
-    
+
     public int getStock(int productId) {
         return inventoryClient.getStock(productId).stock();
     }
-    
+
 }

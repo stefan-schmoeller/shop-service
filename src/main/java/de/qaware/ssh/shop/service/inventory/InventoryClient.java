@@ -1,6 +1,11 @@
 package de.qaware.ssh.shop.service.inventory;
 
-import jakarta.ws.rs.*;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.faulttolerance.Timeout;
@@ -15,24 +20,24 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public interface InventoryClient {
-    
+
     @GET
     @Timeout(2000)
     @Fallback(fallbackMethod = "stockFallback", applyOn = {TimeoutException.class, ClientWebApplicationException.class})
     List<InventoryEntry> getStock(@QueryParam("id") List<Integer> productIds);
-    
+
     @GET
     @Path("/{id}")
     @Timeout(2000)
     @Fallback(fallbackMethod = "stockFallback", applyOn = {TimeoutException.class, ClientWebApplicationException.class})
     InventoryEntry getStock(@PathParam("id") Integer productId);
-    
+
     default List<InventoryEntry> stockFallback(List<Integer> productIds) {
         return productIds.stream().map(id -> new InventoryEntry(id, Integer.MIN_VALUE)).toList();
     }
-    
+
     default InventoryEntry stockFallback(Integer productId) {
         return new InventoryEntry(productId, Integer.MIN_VALUE);
     }
-    
+
 }
