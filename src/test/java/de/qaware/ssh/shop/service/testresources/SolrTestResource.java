@@ -28,7 +28,7 @@ public class SolrTestResource implements QuarkusTestResourceConfigurableLifecycl
     // Version of the Solr Docker Image to use.
     private String solrCloudVersion;
     private String[] solrCollections;
-    
+
     private Optional<String> containerNetworkId;
 
     boolean logConsumeEnabled;
@@ -42,7 +42,7 @@ public class SolrTestResource implements QuarkusTestResourceConfigurableLifecycl
     public void init(WithSolrTestResource annotation) {
         solrCloudVersion = annotation.version();
         if (annotation.collections() == null || annotation.collections().length == 0) {
-            throw new IllegalStateException("No Collections have been specified. Please add the collections property at the WithSolrTestResource annotation");
+            throw new IllegalStateException("No collections have been specified. Please add the collections property at the WithSolrTestResource annotation");
         }
         solrCollections = annotation.collections();
         logConsumeEnabled = annotation.logConsumeEnabled();
@@ -81,7 +81,7 @@ public class SolrTestResource implements QuarkusTestResourceConfigurableLifecycl
             .withCopyFileToContainer(MountableFile.forClasspathResource("solr/data", 0777), SOLR_DATA_PATH)
             .withCommand("/opt/solr/docker/scripts/docker-entrypoint.sh solr start -c -f");
     }
-    
+
     private void createCollection(String collection) {
         try {
             // create the collection -c, with the config set named -n at path -d
@@ -98,7 +98,7 @@ public class SolrTestResource implements QuarkusTestResourceConfigurableLifecycl
             );
         }
     }
-    
+
     private void populateCollection(String collection) {
         try {
             // populate the collection -c, with the data stored in /var/solr/data/{collection}
@@ -137,7 +137,7 @@ public class SolrTestResource implements QuarkusTestResourceConfigurableLifecycl
             );
         }
     }
-    
+
     @Override
     public void stop() {
         if (solrContainer != null) {
